@@ -1,0 +1,45 @@
+namespace = sf_maintenance
+
+event = {
+	id = sf_maintenance.1
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		any_country = {
+			OR = {
+				is_country_type = sf_stellarfleet
+				is_country_type = sf_swarm
+				is_country_type = sf_nomad
+				is_country_type = sf_energy
+			}
+		}
+	}
+	
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = sf_stellarfleet
+					is_country_type = sf_swarm
+					is_country_type = sf_nomad
+					is_country_type = sf_energy
+				}
+			}
+			every_country = {
+				limit = {
+					OR = {
+						is_country_type = default
+						is_country_type = fallen_empire
+						is_country_type = awakened_fallen_empire				
+					}
+					NOT = {
+						has_communications = PREV
+					}				
+				}
+				establish_communications_no_message = PREV
+			}
+		}
+	}
+}

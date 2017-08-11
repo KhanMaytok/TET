@@ -1,0 +1,73 @@
+
+@exd_bloom_factor = 4
+@exd_dissolve_h = 0.75
+
+entity = {
+	name = "extra_dimensional_sf_sf_large_ship_ed_entity"
+	pdxmesh = "extra_dimensional_01_ship_frame_mesh"
+	scale = 0.8
+	
+	game_data = {
+  		raytrace_projectiles = no
+  		dissolve_on_death = 3.0
+		ship_color = hsv { 0.0 1.0 0.75 1.0 }
+ 	}
+	
+	default_state = "idle"
+	state = { name = "idle"			animation = "idle" }
+	state = { name = "moving"		animation = "idle" }
+	state = { name = "death"		animation = "death" looping = no }
+}
+
+entity = {
+	name = "extra_dimensional_sf_sf_small_ship_ed_entity"
+	pdxmesh = "extra_dimensional_01_ship_frame_mesh"
+	scale = 0.7
+	
+	game_data = {
+  		raytrace_projectiles = no
+  		dissolve_on_death = 3.0
+		ship_color = hsv { 0.00 1.0 0.75 1.0 }
+ 	}
+	
+	default_state = "idle"
+	state = { name = "idle"			animation = "idle" }
+	state = { name = "moving"		animation = "idle" }
+	state = { name = "death"		animation = "death" looping = no }
+}
+
+entity = {
+	name = "extra_dimensional_sf_sf_medium_ship_ed_entity"
+	pdxmesh = "extra_dimensional_01_ship_frame_mesh"
+	scale = 1.0
+	
+	game_data = {
+  		raytrace_projectiles = no
+  		dissolve_on_death = 3.0
+		ship_color = hsv { 0.00 1.0 0.75 1.0 }
+ 	}
+	
+	default_state = "idle"
+	state = { name = "idle"			animation = "idle" }
+	state = { name = "moving"		animation = "idle" }
+	state = { name = "death"		animation = "death" looping = no }
+}
+
+entity = {
+	name = "extra_dimensional_sf_sf_novaship_entity"
+	pdxmesh = "extra_dimensional_01_ship_frame_mesh"
+	
+	scale = 1.5
+	
+	game_data = {
+  		raytrace_projectiles = no
+  		dissolve_on_death = 3.0
+		ship_color = hsv { 0.00 1.0 0.75 1.0 }
+		size = 5
+ 	}
+	
+	default_state = "idle"
+	state = { name = "idle"			animation = "idle" }
+	state = { name = "moving"		animation = "idle" }
+	state = { name = "death"		animation = "death" looping = no }
+}

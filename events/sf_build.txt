@@ -1,0 +1,1091 @@
+namespace = sf_build
+
+ship_event = {
+	id = sf_build.100
+	title = sf_build.100.name
+	desc = sf_build.100.desc
+	picture = GFX_evt_fallen_empire_awakes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			OR = {
+				is_country_type = sf_stellarfleet
+			}
+		}
+		FROM = {
+			OR = {
+				sf_st_is_habitable = yes
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+	}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = sf_builder
+		}
+	}
+	
+	option = {
+		name = sf_build.100.a
+		trigger = {
+			FROM = {
+				planet_size > 24
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_barren
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						create_ship = {
+							name = random
+							design = "Gluttony"
+							graphical_culture = "fallen_empire_sf"
+						}					
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.100.b
+		trigger = {
+			FROM = {
+				planet_size > 19
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_barren
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 1
+							create_ship = {
+								name = random
+								design = "Pride"
+								graphical_culture = "fallen_empire_sf"
+							}
+						}						
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.100.c
+		trigger = {
+			FROM = {
+				planet_size > 15
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_barren
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 3
+							create_ship = {
+								name = random
+								design = "Wrath"
+								graphical_culture = "fallen_empire_sf"
+							}
+						}						
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.100.d
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_barren
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 12
+							create_ship = {
+								name = random
+								design = "Envy"
+								graphical_culture = "fallen_empire_sf"
+							}
+						}				
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	after = {
+		FROM = {
+			random_research_station = {
+				dismantle = yes
+			}
+			random_mining_station = {
+				dismantle = yes
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = sf_build.200
+	title = sf_build.200.name
+	desc = sf_build.200.desc
+	picture = GFX_evt_society_research
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			OR = {
+				is_country_type = sf_swarm
+			}
+		}
+		FROM = {
+			OR = {
+				sf_st_is_habitable = yes
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+	}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = sf_builder
+		}
+	}
+	
+	option = {
+		name = sf_build.200.a
+		trigger = {
+			FROM = {
+				planet_size > 24
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_infested			
+					#set_planet_max_health = 8000
+					#set_planet_health = 8000
+					#set_owner = event_target:sf_builder
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						create_ship = {
+							name = random
+							design = "Harvester"
+							graphical_culture = "swarm_01"
+						}					
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.200.b
+		trigger = {
+			FROM = {
+				planet_size > 19
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_infested			
+					#set_planet_max_health = 8000
+					#set_planet_health = 8000
+					#set_owner = event_target:sf_builder
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 15
+							create_ship = {
+								name = random
+								design = "Swarm Large"
+								graphical_culture = "swarm_01"
+							}
+						}				
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.200.c
+		trigger = {
+			FROM = {
+				planet_size > 15
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_infested			
+					#set_planet_max_health = 8000
+					#set_planet_health = 8000
+					#set_owner = event_target:sf_builder
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 20
+							create_ship = {
+								name = random
+								design = "Swarm Carrier"
+								graphical_culture = "swarm_01"
+							}
+						}					
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.200.d
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_infested			
+					#set_planet_max_health = 8000
+					#set_planet_health = 8000
+					#set_owner = event_target:sf_builder
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 30
+							create_ship = {
+								name = random
+								design = "Swarm Small"
+								graphical_culture = "swarm_01"
+							}
+						}					
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	after = {
+		FROM = {
+			random_research_station = {
+				dismantle = yes
+			}
+			random_mining_station = {
+				dismantle = yes
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = sf_build.300
+	title = sf_build.300.name
+	desc = sf_build.300.desc
+	picture = GFX_evt_fleet_neutral
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			OR = {
+				is_country_type = sf_nomad
+			}
+		}
+		FROM = {
+			OR = {
+				sf_st_is_habitable = yes
+				is_planet_class = pc_ringworld_habitable
+			}
+		}
+	}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = sf_builder
+		}
+	}
+	
+	option = {
+		name = sf_build.300.a
+		trigger = {
+			FROM = {
+				planet_size > 24
+			}
+		}
+		event_target:sf_builder = {
+			add_minerals = 2500
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_barren
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.300.b
+		trigger = {
+			FROM = {
+				planet_size > 19
+				NOT = {
+					planet_size > 24
+				}
+			}
+		}
+		event_target:sf_builder = {
+			add_minerals = 2000
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_barren
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.300.c
+		trigger = {
+			FROM = {
+				planet_size > 15
+				NOT = {
+					planet_size > 19
+				}
+			}
+		}
+		event_target:sf_builder = {
+			add_minerals = 1500
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_barren
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.300.d
+		trigger = {
+			FROM = {
+				NOT = {
+					planet_size > 15
+				}
+			}
+		}
+		event_target:sf_builder = {
+			add_minerals = 1000
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					FROM = {
+						sf_st_is_habitable = yes
+					}
+				}
+				FROM = {
+					change_pc = pc_barren
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				FROM = {
+					change_pc = pc_ringworld_habitable_damaged
+				}
+			}
+		}
+	}
+	
+	after = {
+		FROM = {
+			random_research_station = {
+				dismantle = yes
+			}
+			random_mining_station = {
+				dismantle = yes
+			}
+		}
+	}
+}
+
+fleet_event = {
+	id = sf_build.310
+	title = sf_build.310.name
+	desc = sf_build.310.desc
+	picture = GFX_evt_fleet_neutral
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			is_country_type = sf_nomad
+		}
+		is_ship_size = sf_ark_ship
+		FROM = {
+			is_star = yes
+		}
+	}
+	
+	option = {
+		name = sf_build.310.corvette
+		trigger = {
+			owner = {
+				OR = {
+					minerals > 1000
+					minerals = 1000
+				}
+			}
+		}
+		owner = {
+			add_minerals = -1000
+		}
+		hidden_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = ROOT.owner
+					while = {
+						count = 16
+						create_ship = {
+							name = random
+							design = "Ark Defender"
+						}
+					}
+					set_location = {
+						target = FROM
+						distance = 0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = sf_build.310.destroyer
+		trigger = {
+			owner = {
+				OR = {
+					minerals > 1000
+					minerals = 1000
+				}
+			}
+		}
+		owner = {
+			add_minerals = -1000
+		}
+		hidden_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = ROOT.owner
+					while = {
+						count = 8
+						create_ship = {
+							name = random
+							design = "Ark Protector"
+						}
+					}
+					set_location = {
+						target = FROM
+						distance = 0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = sf_build.310.cruiser
+		trigger = {
+			owner = {
+				OR = {
+					minerals > 1000
+					minerals = 1000
+				}
+			}
+		}
+		owner = {
+			add_minerals = -1000
+		}
+		hidden_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = ROOT.owner
+					while = {
+						count = 4
+						create_ship = {
+							name = random
+							design = "Ark Guardian"
+						}
+					}
+					set_location = {
+						target = FROM
+						distance = 0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = sf_build.310.ark
+		trigger = {
+			owner = {
+				OR = {
+					minerals > 1000
+					minerals = 1000
+				}
+			}
+		}
+		owner = {
+			add_minerals = -1000
+		}
+		hidden_effect = {
+			create_fleet = {
+				effect = {
+					set_owner = ROOT.owner
+					create_ship = {
+						name = random
+						design = "Voyage"
+					}				
+					set_location = {
+						target = FROM
+						distance = 0
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = sf_build.310.none
+	}
+}
+
+ship_event = {
+	id = sf_build.400
+	title = sf_build.400.name
+	desc = sf_build.400.desc
+	picture = GFX_evt_black_hole
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			OR = {
+				is_country_type = sf_energy
+			}
+		}
+		FROM = {
+			is_star = yes
+			NOT = { is_planet_class = pc_black_hole }
+			NOT = { is_planet_class = pc_neutron_star }
+			NOT = { is_planet_class = pc_pulsar }
+		}
+	}
+	
+	immediate = {
+		owner = {
+			save_event_target_as = sf_builder
+		}
+	}
+	
+	option = {
+		name = sf_build.400.a
+		trigger = {
+			FROM = {
+				OR = {
+					is_planet_class = pc_b_star
+				}
+			}
+		}
+		hidden_effect = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+							sf_st_is_habitable = yes
+					}
+					destroy_colony = yes
+					change_pc = pc_frozen
+				}
+				every_system_planet = {
+					limit = {
+						is_planet_class = pc_ringworld_habitable
+					}
+					destroy_colony = yes
+					change_pc = pc_ringworld_habitable_damaged
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						planet_size > 25
+					}
+					change_pc = pc_black_hole
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						planet_size < 26
+					}
+					change_pc = pc_neutron_star
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						create_ship = {
+							name = random
+							design = "Stellar Blaze"
+							graphical_culture = "extra_dimensional_sf"
+						}					
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.400.b
+		trigger = {
+			FROM = {
+				OR = {
+					is_planet_class = pc_b_star
+					is_planet_class = pc_a_star
+				}
+			}
+		}
+		hidden_effect = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+							sf_st_is_habitable = yes
+					}
+					destroy_colony = yes
+					change_pc = pc_frozen
+				}
+				every_system_planet = {
+					limit = {
+						is_planet_class = pc_ringworld_habitable
+					}
+					destroy_colony = yes
+					change_pc = pc_ringworld_habitable_damaged
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						planet_size > 25
+					}
+					change_pc = pc_black_hole
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						planet_size < 26
+					}
+					change_pc = pc_neutron_star
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 4
+							create_ship = {
+								name = random
+								design = "Stellar Torch"
+								graphical_culture = "extra_dimensional_sf"
+							}
+						}						
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.400.c
+		trigger = {
+			FROM = {
+				OR = {
+					is_planet_class = pc_b_star
+					is_planet_class = pc_a_star
+					is_planet_class = pc_f_star
+					is_planet_class = pc_g_star
+				}
+			}
+		}
+		hidden_effect = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+							sf_st_is_habitable = yes
+					}
+					destroy_colony = yes
+					change_pc = pc_frozen
+				}
+				every_system_planet = {
+					limit = {
+						is_planet_class = pc_ringworld_habitable
+					}
+					destroy_colony = yes
+					change_pc = pc_ringworld_habitable_damaged
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						planet_size > 25
+					}
+					change_pc = pc_black_hole
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						planet_size < 26
+					}
+					change_pc = pc_neutron_star
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 8
+							create_ship = {
+								name = random
+								design = "Stellar Ember"
+								graphical_culture = "extra_dimensional_sf"
+							}
+						}						
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_build.400.d
+		hidden_effect = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+							sf_st_is_habitable = yes
+					}
+					destroy_colony = yes
+					change_pc = pc_frozen
+				}
+				every_system_planet = {
+					limit = {
+						is_planet_class = pc_ringworld_habitable
+					}
+					destroy_colony = yes
+					change_pc = pc_ringworld_habitable_damaged
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						planet_size > 25
+					}
+					change_pc = pc_black_hole
+				}
+				every_system_planet = {
+					limit = {
+						is_star = yes
+						planet_size < 26
+					}
+					change_pc = pc_neutron_star
+				}
+			}
+			event_target:sf_builder = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_builder
+						while = {
+							count = 16
+							create_ship = {
+								name = random
+								design = "Stellar Cinder"
+								graphical_culture = "extra_dimensional_sf"
+							}
+						}				
+						set_location = {
+							target = FROM
+							distance = 0
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	after = {
+		FROM = {
+			random_research_station = {
+				dismantle = yes
+			}
+			random_mining_station = {
+				dismantle = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+#	Example:
+# 
+#	example_trigger = {
+#		is_country_type = default
+#		free_leader_slots > 0
+#	}
+#
+#
+#	In a script file:
+#
+#	trigger = {
+#		example_trigger = yes
+#	}
+#
+
+sf_st_country = {
+	is_country_type = sf_stellarfleet
+}
+
+sf_st_is_habitable = {
+	OR = {
+		is_planet_class = pc_desert
+		is_planet_class = pc_arid
+		is_planet_class = pc_savannah
+		is_planet_class = pc_tropical
+		is_planet_class = pc_continental
+		is_planet_class = pc_ocean
+		is_planet_class = pc_tundra
+		is_planet_class = pc_arctic
+		is_planet_class = pc_alpine
+		is_planet_class = pc_nuked
+		is_planet_class = pc_ai
+		is_planet_class = pc_gaia
+	}	
+}

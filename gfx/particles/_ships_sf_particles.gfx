@@ -1,0 +1,73 @@
+objectTypes = {
+	
+	pdxparticle = {
+		name = "ed_sf_large_dissolve_effect"
+		type = "ed_sf_dissolve_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "ed_sf_medium_dissolve_effect"
+		type = "ed_sf_dissolve_effect"
+		
+		scale = 0.6
+	}
+	
+	pdxparticle = {
+		name = "ed_sf_construction_effect"
+		type = "ed_sf_construction_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "ed_sf_construction_ship_effect"
+		type = "ed_sf_construction_ship_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "ed_sf_anchor_construction_effect"
+		type = "ed_sf_anchor_construction_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "ed_sf_explosion_effect"
+		type = "ed_sf_explosion_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "extra_dimensional_large_sf_ship_effect"
+		type = "extra_dimensional_large_sf_ship_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "extra_dimensional_small_sf_ship_effect"
+		type = "extra_dimensional_small_sf_ship_effect"
+		
+		scale = 1.0
+	}
+	
+	pdxparticle = {
+		name = "extra_dimensional_small_sf_station_effect"
+		type = "extra_dimensional_small_sf_station_effect"
+		
+		scale = 1.0
+	}	
+
+	pdxparticle = {
+		name = "extra_dimensional_large_sf_station_effect"
+		type = "extra_dimensional_large_sf_station_effect"
+		
+		scale = 1.0
+	}
+	
+}

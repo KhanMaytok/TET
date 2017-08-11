@@ -1,0 +1,434 @@
+# Fallen Empire Massive Ship Section
+ship_section_template = {
+	key = "sf_titan_section_key"
+	ship_size = sf_titan
+	fits_on_slot = mid
+	entity = "titan_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	#only one because it uses a titan laser
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		slot_size = extra_large
+		slot_type = weapon
+		locatorname = "titan_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_04"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+	component_slot = {
+		name = "LARGE_GUN_05"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_06"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_07"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_08"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_03"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "medium_gun_03"
+	}	
+	component_slot = {
+		name = "STRIKE_CRAFT_04"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "medium_gun_04"
+	}		
+	
+	large_utility_slots = 20
+	aux_utility_slots = 3
+}
+
+# Fallen Empire Large Ship Section
+ship_section_template = {
+	key = "sf_battlecruiser_section_key"
+	ship_size = sf_battlecruiser
+	fits_on_slot = mid
+	entity = "warship_large_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		slot_size = large
+		slot_type = strike_craft
+		rotation = 90
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		slot_size = extra_large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_02"
+		slot_size = extra_large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}	
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}	
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_04"
+	}
+	
+	large_utility_slots = 10
+	aux_utility_slots = 2
+}
+
+# Fallen Empire Small Ship Section
+ship_section_template = {
+	key = "sf_escort_section_key"
+	ship_size = sf_escort
+	fits_on_slot = mid
+	entity = "warship_small_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_04"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+	component_slot = {
+		name = "PD_01"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}
+	component_slot = {
+		name = "PD_02"
+		slot_size = point_defence
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+
+	medium_utility_slots = 10
+	aux_utility_slots = 1
+}
+### Nomad Corvette
+ship_section_template = {
+	key = "sf_nomad_corvette_section_key"
+	ship_size = nomad_corvette
+	fits_on_slot = mid
+	entity = "eventship_02_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "root"
+	}
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "root"
+	}
+	
+	small_utility_slots = 5
+}
+# Extradimensional Large Section
+ship_section_template = {
+	key = "sf_ed_large_warship_key"
+	ship_size = sf_large_ship_ed
+	fits_on_slot = mid
+	entity = "warship_large_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}		
+	component_slot = {
+		name = "LARGE_GUN_03"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_03"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "large_gun_01"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "large_gun_03"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_04"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "large_gun_01"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "large_gun_02"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "large_gun_03"
+		is_side_slot = yes
+	}
+
+	large_utility_slots = 8
+	aux_utility_slots = 2
+}
+
+# Extradimensional Medium Section
+ship_section_template = {
+	key = "sf_ed_medium_warship_key"
+	ship_size = sf_medium_ship_ed
+	fits_on_slot = mid
+	entity = "warship_medium_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "LARGE_GUN_01"
+		slot_size = large
+		slot_type = weapon
+		locatorname = "large_gun_01_l"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}		
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}		
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "large_gun_01_l"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_01"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+	}	
+	component_slot = {
+		name = "SMALL_GUN_02"
+		slot_size = small
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+	}	
+
+	large_utility_slots = 4
+	medium_utility_slots = 4
+	aux_utility_slots = 2
+}
+
+# Extradimensional Small Section
+ship_section_template = {
+	key = "sf_ed_warship_small_key"
+	ship_size = sf_small_ship_ed
+	fits_on_slot = mid
+	entity = "warship_small_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_01"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_02"
+		is_side_slot = yes
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		slot_size = medium
+		slot_type = weapon
+		locatorname = "medium_gun_03"
+		is_side_slot = yes
+	}
+	
+	medium_utility_slots = 4
+	aux_utility_slots = 2
+}

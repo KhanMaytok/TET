@@ -1,0 +1,37 @@
+ship_section_template = {
+	key = "sf_mineral_cargo_section_key"
+	ship_size = sf_mineral_cargo
+	fits_on_slot = mid
+	entity = "sf_mineral_cargo_section_entity"
+	icon = "GFX_ship_part_core_mid"	
+	
+	small_utility_slots = 3
+	medium_utility_slots = 2
+	aux_utility_slots = 1
+}
+
+ship_section_template = {
+	key = "sf_energy_cargo_section_key"
+	ship_size = sf_energy_cargo
+	fits_on_slot = mid
+	entity = "sf_energy_cargo_section_entity"
+	icon = "GFX_ship_part_core_mid"	
+	
+	small_utility_slots = 3
+	medium_utility_slots = 2
+	aux_utility_slots = 1
+}
+
+# Trade Post
+
+ship_section_template = {
+	key = "sf_trade_post_section_key"
+	ship_size = sf_trade_post
+	
+	fits_on_slot = "mid"
+	entity = "empty_section_entity"
+	icon = "GFX_ship_part_core_mid"
+	
+	large_utility_slots = 7
+	aux_utility_slots = 2
+}

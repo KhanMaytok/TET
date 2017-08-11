@@ -1,0 +1,114 @@
+# Icons set here are the ones show in the actual slot. The reason is so that we can support different icons for different sizes. 
+
+#############
+#	ARMOR	#
+#############
+
+@armor_1S = 2
+@armor_1M = 4
+@armor_1L = 8
+
+@armor_2S = 2.5
+@armor_2M = 5
+@armor_2L = 10
+
+@armor_3S = 3
+@armor_3M = 6
+@armor_3L = 12
+
+@armor_4S = 3.5
+@armor_4M = 7
+@armor_4L = 14
+
+@armor_5S = 4
+@armor_5M = 8
+@armor_5L = 16
+
+#############
+#	COST	#
+#############
+
+@cost_1S = 2
+@cost_1M = 4
+@cost_1L = 8
+
+@cost_2S = 4
+@cost_2M = 8
+@cost_2L = 16
+
+@cost_3S = 6
+@cost_3M = 12
+@cost_3L = 24
+
+@cost_4S = 8
+@cost_4M = 16
+@cost_4L = 32
+
+@cost_5S = 10
+@cost_5M = 20
+@cost_5L = 40
+
+#############
+# UTILITIES #
+#############
+
+utility_component_template = {
+	key = "SF_BORDER_EXTRUDER"
+	size = medium
+	icon = "GFX_ship_part_border_extruder_1"
+	icon_frame = 1
+	power = 0
+	cost = 20
+	border_extrusion_range = 25
+	class_restriction = { shipclass_constructor }
+	hidden = yes
+	
+	component_set = "border_extruders"
+	
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "SF_AURA_NANOBOT_CLOUD"
+	size = medium
+	icon = "GFX_ship_part_aura_nanobot"
+	icon_frame = 1
+	power = 0
+	cost = 0
+	class_restriction = { shipclass_constructor }
+	hidden = yes
+	
+	component_set = "ship_aura_components"
+	
+	friendly_aura = {
+		name = "aura_nanobot_cloud"
+		radius = 80
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_support_aura
+			priority = 20
+		}
+		
+		modifier = {
+			ship_auto_repair_add = 0.1
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}

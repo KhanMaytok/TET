@@ -1,0 +1,25 @@
+objectTypes = {
+	
+#############
+# IDLE
+#############
+	
+	pdxparticle = {
+		name = "extradimensional_01_sf_exhaust_idle"
+		type = "extradimensional_01_sf_exhaust_idle_effect"
+		scale = 1.0
+	}
+	
+	
+	
+#############
+# MOVING
+#############
+	
+	pdxparticle = {
+		name = "extradimensional_01_sf_exhaust_moving"
+		type = "extradimensional_01_sf_exhaust_moving_effect"
+		scale = 1.0
+	}
+	
+}

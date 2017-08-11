@@ -1,0 +1,63 @@
+on_press_begin = {
+	events = {
+		sf_start.1
+	}
+}
+
+# This = construction ship
+# From = planet it is built on
+on_building_mining_station = {
+	events = {
+		sf_build.100
+		sf_build.200
+		sf_build.300
+		sf_build.400
+	}
+}
+
+# This = construction ship
+# From = planet it is built on
+on_building_research_station = {
+	events = {
+		sf_build.100
+		sf_build.200
+		sf_build.300
+		sf_build.400
+	}
+}
+
+# A planet is being bombarded
+# This = planet under bombardment
+# From = bombarding empire
+#on_planet_zero_health = {
+#	events = {
+#		sf_purge.1
+#	}
+#}
+
+# A planet is being bombarded
+# This = planet under bombardment
+# From = bombarding empire
+#on_monthly_orbital_bombardment = {
+#	events = {
+#		sf_purge.2
+#	}
+#}
+
+on_yearly_pulse = {
+	events = {
+		sf_maintenance.1
+		#sf_trade.300
+	}
+}
+
+#From = Planet scope
+#This = Fleet scope
+on_fleet_enter_orbit = {
+	events = {
+		sf_purge.3
+		#sf_trade.1
+		sf_trade.200
+		sf_build.310
+	}
+}

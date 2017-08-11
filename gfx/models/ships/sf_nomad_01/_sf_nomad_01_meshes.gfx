@@ -1,0 +1,11 @@
+objectTypes = {
+	pdxmesh = {
+		name = "sf_ark_ship_mesh"
+		file = "gfx/models/ships/other/ark_ship.mesh"
+		
+		animation = { id = "idle"			type = "ark_ship_idle_animation" }
+		animation = { id = "death"			type = "ark_ship_death_animation" }
+		
+		scale = 1.0
+	}
+}

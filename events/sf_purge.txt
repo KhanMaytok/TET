@@ -1,0 +1,189 @@
+namespace = sf_purge
+
+planet_event = {
+	id = sf_purge.1
+	title = sf_purge.1.name
+	desc = sf_purge.1.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_ghost_town
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			OR = {
+				is_country_type = sf_stellarfleet			
+				is_country_type = sf_swarm
+				is_country_type = sf_nomad
+			}
+		}
+	}
+	
+	immediate = {
+		add_threat = {
+			who = from
+			amount = 10 # scales to pops
+		}
+		while = {
+			limit = {
+				any_tile = {
+					has_blocker = tb_tribal_settlement
+				}
+			}
+			random_tile = {
+				limit = {
+					has_blocker = tb_tribal_settlement
+				}
+				remove_blocker = yes
+			}
+		}
+		destroy_colony = yes
+	}
+	option = {
+		name = OK
+	}
+	
+}
+
+planet_event = {
+	id = sf_purge.2
+	title = sf_purge.2.name
+	desc = sf_purge.2.desc
+	picture = GFX_evt_city_ruins
+	show_sound = event_ghost_town
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			OR = {
+				is_country_type = sf_stellarfleet			
+				is_country_type = sf_swarm
+				is_country_type = sf_nomad
+			}
+		}
+		owner = {
+			is_primitive = yes
+		}
+	}
+	
+	immediate = {
+		add_threat = {
+			who = from
+			amount = 10 # scales to pops
+		}
+		while = {
+			limit = {
+				any_tile = {
+					has_blocker = tb_tribal_settlement
+				}
+			}
+			random_tile = {
+				limit = {
+					has_blocker = tb_tribal_settlement
+				}
+				remove_blocker = yes
+			}
+		}
+		destroy_colony = yes
+	}
+	option = {
+		name = OK
+	}
+	
+}
+
+fleet_event = {
+	id = sf_purge.3
+	title = sf_purge.3.name
+	picture = GFX_evt_city_ruins
+	show_sound = event_ghost_town
+	is_triggered_only = yes
+	
+	desc = {
+		text = sf_purge.3.desc_stellarfleet
+		trigger = {
+			ROOT.owner = {
+				is_country_type = sf_stellarfleet
+			}
+		}
+	}
+	
+	desc = {
+		text = sf_purge.3.desc_swarm
+		trigger = {
+			ROOT.owner = {
+				is_country_type = sf_swarm
+			}
+		}
+	}
+	
+	desc = {
+		text = sf_purge.3.desc_nomad
+		trigger = {
+			ROOT.owner = {
+				is_country_type = sf_nomad
+			}
+		}
+	}
+	
+	desc = {
+		text = sf_purge.3.desc_energy
+		trigger = {
+			ROOT.owner = {
+				is_country_type = sf_energy
+			}
+		}
+	}
+	
+	trigger = {
+		FROM = {
+			is_colony = yes
+		}
+		ROOT.owner = {
+			OR = {
+				is_country_type = sf_stellarfleet			
+				is_country_type = sf_swarm
+				is_country_type = sf_nomad
+				is_country_type = sf_energy
+			}
+			is_hostile = FROM.owner
+		}
+		any_owned_ship = {
+			is_in_combat = no
+			OR = {
+				is_ship_size = sf_mothership
+				is_ship_size = sf_broodmother
+				is_ship_size = sf_ark_ship
+				is_ship_size = sf_novaship
+			}
+		}
+	}
+	option = {
+		name = sf_purge.3.a
+		hidden_effect = {
+			FROM = {
+				add_threat = {
+					who = ROOT.owner
+					amount = 10 # scales to pops
+				}
+				while = {
+					limit = {
+						any_tile = {
+							has_blocker = tb_tribal_settlement
+						}
+					}
+					random_tile = {
+						limit = {
+							has_blocker = tb_tribal_settlement
+						}
+						remove_blocker = yes
+					}
+				}
+				destroy_colony = yes
+			}
+		}
+	}
+	option = {
+		name = sf_purge.3.b
+	}
+	
+}

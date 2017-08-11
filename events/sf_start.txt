@@ -1,0 +1,360 @@
+namespace = sf_start
+
+event = {
+	id = sf_start.1
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		is_ai = no
+	}
+	
+	immediate = {
+		country_event = {
+			id = sf_start.100
+		}
+	}
+}
+
+country_event = {
+	id = sf_start.2
+	title = sf_start.2.name
+	desc = sf_start.2.desc
+	picture = GFX_evt_fallen_empire_awakes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sf_start.2.a
+		hidden_effect = {
+			country_event = {
+				id = sf_start.3
+			}
+		}
+	}	
+	option = {
+		name = sf_start.2.b
+	}
+	
+}
+
+country_event = {
+	id = sf_start.3
+	title = sf_start.3.name
+	desc = sf_start.3.desc
+	picture = GFX_evt_fallen_empire_awakes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		capital_scope = {
+			save_event_target_as = sf_home				
+		}
+		set_country_type = sf_stellarfleet
+		set_graphical_culture = fallen_empire_sf
+		every_owned_planet = {
+			destroy_colony = yes
+		}
+		event_target:sf_home = {
+			change_pc = pc_barren
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Gluttony"
+						graphical_culture = "fallen_empire_sf"
+					}					
+					set_location = {
+						target = PREV
+						distance = 0
+					}				
+				}
+			}		
+		}
+	}
+	option = {
+		name = sf_start.3.a
+	}
+}
+
+###Choice Events
+
+country_event = {
+	id = sf_start.100
+	title = sf_start.100.name
+	desc = sf_start.100.desc
+	picture = GFX_evt_fallen_empire_awakes
+	
+	is_triggered_only = yes
+	
+	#Mothership Option
+	option = {
+		name = sf_start.100.a
+		hidden_effect = {
+			country_event = {
+				id = sf_start.2
+			}
+		}
+	}	
+	
+	#Swarm Option
+	option = {
+		name = sf_start.100.b
+		hidden_effect = {
+			country_event = {
+				id = sf_start.200
+			}
+		}
+	}	
+	
+	#Nomad Option
+	option = {
+		name = sf_start.100.c
+		hidden_effect = {
+			country_event = {
+				id = sf_start.300
+			}
+		}
+	}
+	
+	#Energy Option
+	option = {
+		name = sf_start.100.d
+		hidden_effect = {
+			country_event = {
+				id = sf_start.400
+			}
+		}
+	}
+	
+	#None Option
+	option = {
+		name = sf_start.100.none
+	}
+}
+
+country_event = {
+	id = sf_start.200
+	title = sf_start.200.name
+	desc = sf_start.200.desc
+	picture = GFX_evt_society_research
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sf_start.200.a
+		hidden_effect = {
+			country_event = {
+				id = sf_start.201
+			}
+		}
+	}	
+	option = {
+		name = sf_start.200.b
+	}
+	
+}
+
+country_event = {
+	id = sf_start.201
+	title = sf_start.201.name
+	desc = sf_start.201.desc
+	picture = GFX_evt_society_research
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		capital_scope = {
+			save_event_target_as = sf_home				
+		}
+		set_country_type = sf_swarm
+		set_graphical_culture = swarm_01
+		every_owned_planet = {
+			destroy_colony = yes
+		}
+		event_target:sf_home = {
+			change_pc = pc_infested
+			#set_planet_max_health = 8000
+			#set_planet_health = 8000
+			#set_owner = ROOT
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Harvester"
+						graphical_culture = "swarm_01"
+					}					
+					set_location = {
+						target = PREV
+						distance = 0
+					}				
+				}
+			}		
+		}
+	}
+	option = {
+		name = sf_start.201.a
+	}
+}
+
+country_event = {
+	id = sf_start.300
+	title = sf_start.300.name
+	desc = sf_start.300.desc
+	picture = GFX_evt_fleet_neutral
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sf_start.300.a
+		hidden_effect = {
+			country_event = {
+				id = sf_start.301
+			}
+		}
+	}	
+	option = {
+		name = sf_start.300.b
+	}
+	
+}
+
+country_event = {
+	id = sf_start.301
+	title = sf_start.301.name
+	desc = sf_start.301.desc
+	picture = GFX_evt_fleet_neutral
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		capital_scope = {
+			save_event_target_as = sf_home				
+		}
+		set_country_type = sf_nomad
+		every_owned_planet = {
+			destroy_colony = yes
+		}
+		every_country = {
+			limit = {
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire				
+				}
+				NOT = {
+					has_communications = PREV
+				}				
+			}
+			establish_communications_no_message = PREV
+		}
+		add_energy = 2000
+		add_minerals = 2000
+		event_target:sf_home = {
+			change_pc = pc_barren
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Voyage"
+					}					
+					set_location = {
+						target = PREV
+						distance = 0
+					}				
+				}
+			}
+			#create_fleet = {
+			#	effect = {
+			#		set_owner = ROOT
+			#		while = {
+			#			count = 2
+			#			create_ship = {
+			#				name = random
+			#				design = "Resource Freighter"
+			#			}
+			#		}
+			#		set_location = {
+			#			target = PREV
+			#			distance = 0
+			#		}		
+			#	}
+			#}	
+		}
+	}
+	option = {
+		name = sf_start.301.a
+	}
+}
+
+country_event = {
+	id = sf_start.400
+	title = sf_start.400.name
+	desc = sf_start.400.desc
+	picture = GFX_evt_black_hole
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = sf_start.400.a
+		hidden_effect = {
+			country_event = {
+				id = sf_start.401
+			}
+		}
+	}	
+	option = {
+		name = sf_start.400.b
+	}
+	
+}
+
+country_event = {
+	id = sf_start.401
+	title = sf_start.401.name
+	desc = sf_start.401.desc
+	picture = GFX_evt_black_hole
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		capital_scope = {
+			save_event_target_as = sf_home
+		}
+		set_country_type = sf_energy
+		set_graphical_culture = extra_dimensional_sf
+		every_owned_planet = {
+			destroy_colony = yes
+		}
+		event_target:sf_home = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						is_star = yes
+					}
+					change_pc = pc_pulsar
+				}				
+			}
+			create_fleet = {
+				effect = {
+					set_owner = ROOT
+					create_ship = {
+						name = random
+						design = "Stellar Blaze"
+						graphical_culture = "extra_dimensional_sf"
+					}					
+					set_location = {
+						target = PREV
+						distance = 0
+					}				
+				}
+			}		
+		}
+	}
+	option = {
+		name = sf_start.401.a
+	}
+}

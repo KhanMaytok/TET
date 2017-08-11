@@ -1,0 +1,15 @@
+sf_tm_nomad = {
+
+	potential = {
+		is_country_type = sf_nomad
+	}
+	
+	trigger = {
+		is_country_type = sf_nomad
+	}
+	
+	navy_size_add = 10000
+	spaceport_ship_build_cost_mult = -1
+	max_energy = 5000
+	max_minerals = 5000
+}

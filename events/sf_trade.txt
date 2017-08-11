@@ -1,0 +1,753 @@
+namespace = sf_trade
+
+# fleet_event = {
+	# id = sf_trade.1
+	# title = sf_trade.1.name
+	# desc = sf_trade.1.desc
+	# picture = GFX_evt_smugglers_in_bar
+	
+	# is_triggered_only = yes
+	
+	# trigger = {
+		# ROOT.owner = {
+			# NOT = {
+				# is_hostile = FROM.owner
+			# }
+			# is_country_type = sf_nomad
+		# }
+		# FROM = {
+			# is_colony = yes
+		# }
+		# FROM.owner = {
+			# OR = {
+				# is_country_type = default
+				# is_country_type = fallen_empire
+				# is_country_type = awakened_fallen_empire
+			# }
+		# }
+		# count_fleet_ships = {
+			# limit = {
+				# OR = {
+					# is_ship_size = sf_mineral_cargo
+					# is_ship_size = sf_energy_cargo
+				# }
+			# }
+			# count > 0
+		# }
+		# any_owned_ship = {
+			# is_in_combat = no
+		# }
+	# }
+	
+	# immediate = {
+		# ROOT = {
+			# save_event_target_as = sf_trade_fleet
+		# }
+		# ROOT.owner = {
+			# save_event_target_as = sf_trade_nomad
+		# }
+		# FROM = {
+			# save_event_target_as = sf_trade_planet
+		# }
+		# FROM.owner = {
+			# save_event_target_as = sf_trade_empire
+		# }
+	# }
+	
+	# option = {
+		# name = sf_trade.1.a
+		# hidden_effect = {
+			# ROOT.owner = {
+				# country_event = {
+					# id = sf_trade.100
+				# }
+			# }
+		# }
+	# }
+	
+	# option = {
+		# name = sf_trade.1.b
+	# }	
+# }
+
+# country_event = {
+	# id = sf_trade.100
+	# title = sf_trade.100.name
+	# desc = sf_trade.100.desc
+	
+	# is_triggered_only = yes
+	# diplomatic = yes
+	# force_open = yes
+	
+	# location = event_target:sf_trade_planet
+	
+	# picture_event_data = {
+		# portrait = event_target:sf_trade_empire
+		# planet_background = event_target:sf_trade_empire
+		# graphical_culture = event_target:sf_trade_empire
+		# city_level = event_target:sf_trade_empire
+		# room = event_target:sf_trade_empire
+	# }
+	
+	# option = {
+		# name = sf_trade.100.mte
+		# trigger = {
+			# event_target:sf_trade_planet = {
+				# NOT = {
+					# has_planet_flag = sf_tradelock
+				# }
+			# }
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_mineral_cargo
+					# }
+					# count > 0
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# country_event = {
+				# id = sf_trade.110
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.100.etm
+		# trigger = {
+			# event_target:sf_trade_planet = {
+				# NOT = {
+					# has_planet_flag = sf_tradelock
+				# }
+			# }
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_energy_cargo
+					# }
+					# count > 0
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# country_event = {
+				# id = sf_trade.120
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.100.ship
+		# trigger = {
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_mineral_cargo
+					# }
+					# count > 3
+				# }
+			# }
+			# event_target:sf_trade_planet = {
+				# has_spaceport = yes
+			# }
+		# }
+		# hidden_effect = {
+			# country_event = {
+				# id = sf_trade.130
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.100.none
+	# }
+# }
+
+# country_event = {
+	# id = sf_trade.110
+	# title = sf_trade.110.name
+	# desc = sf_trade.110.desc
+	
+	# is_triggered_only = yes
+	# diplomatic = yes
+	# force_open = yes
+	
+	# location = event_target:sf_trade_planet
+	
+	# picture_event_data = {
+		# portrait = event_target:sf_trade_empire
+		# planet_background = event_target:sf_trade_empire
+		# graphical_culture = event_target:sf_trade_empire
+		# city_level = event_target:sf_trade_empire
+		# room = event_target:sf_trade_empire
+	# }
+	
+	# option = {
+		# name = sf_trade.110.one
+		# trigger = {
+			# event_target:sf_trade_planet = {
+				# NOT = {
+					# has_planet_flag = sf_tradelock
+				# }
+			# }
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_mineral_cargo
+					# }
+					# count > 0
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 1
+					# create_ship = {
+						# name = random
+						# design = "Energy Freighter"
+					# }
+				# }
+				# while = {
+					# count = 1
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_mineral_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+			# event_target:sf_trade_planet = {
+				# set_timed_planet_flag = {
+					# flag = sf_tradelock
+					# days = 360
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.110.five
+		# trigger = {
+			# event_target:sf_trade_planet = {
+				# NOT = {
+					# has_planet_flag = sf_tradelock
+				# }
+			# }
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_mineral_cargo
+					# }
+					# count > 4
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 7
+					# create_ship = {
+						# name = random
+						# design = "Energy Freighter"
+					# }
+				# }
+				# while = {
+					# count = 5
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_mineral_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+			# event_target:sf_trade_planet = {
+				# set_timed_planet_flag = {
+					# flag = sf_tradelock
+					# days = 360
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.110.ten
+		# trigger = {
+			# event_target:sf_trade_planet = {
+				# NOT = {
+					# has_planet_flag = sf_tradelock
+				# }
+			# }
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_mineral_cargo
+					# }
+					# count > 9
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 15
+					# create_ship = {
+						# name = random
+						# design = "Energy Freighter"
+					# }
+				# }
+				# while = {
+					# count = 10
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_mineral_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+			# event_target:sf_trade_planet = {
+				# set_timed_planet_flag = {
+					# flag = sf_tradelock
+					# days = 360
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.110.none
+	# }
+# }
+
+# country_event = {
+	# id = sf_trade.120
+	# title = sf_trade.120.name
+	# desc = sf_trade.120.desc
+	
+	# is_triggered_only = yes
+	# diplomatic = yes
+	# force_open = yes
+	
+	# location = event_target:sf_trade_planet
+	
+	# picture_event_data = {
+		# portrait = event_target:sf_trade_empire
+		# planet_background = event_target:sf_trade_empire
+		# graphical_culture = event_target:sf_trade_empire
+		# city_level = event_target:sf_trade_empire
+		# room = event_target:sf_trade_empire
+	# }
+	
+	# option = {
+		# name = sf_trade.120.one
+		# trigger = {
+			# event_target:sf_trade_planet = {
+				# NOT = {
+					# has_planet_flag = sf_tradelock
+				# }
+			# }
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_energy_cargo
+					# }
+					# count > 0
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 1
+					# create_ship = {
+						# name = random
+						# design = "Mineral Freighter"
+					# }
+				# }
+				# while = {
+					# count = 1
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_energy_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+			# event_target:sf_trade_planet = {
+				# set_timed_planet_flag = {
+					# flag = sf_tradelock
+					# days = 360
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.120.five
+		# trigger = {
+			# event_target:sf_trade_planet = {
+				# NOT = {
+					# has_planet_flag = sf_tradelock
+				# }
+			# }
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_energy_cargo
+					# }
+					# count > 4
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 7
+					# create_ship = {
+						# name = random
+						# design = "Mineral Freighter"
+					# }
+				# }
+				# while = {
+					# count = 5
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_energy_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+			# event_target:sf_trade_planet = {
+				# set_timed_planet_flag = {
+					# flag = sf_tradelock
+					# days = 360
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.120.ten
+		# trigger = {
+			# event_target:sf_trade_planet = {
+				# NOT = {
+					# has_planet_flag = sf_tradelock
+				# }
+			# }
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_energy_cargo
+					# }
+					# count > 9
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 15
+					# create_ship = {
+						# name = random
+						# design = "Mineral Freighter"
+					# }
+				# }
+				# while = {
+					# count = 10
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_energy_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+			# event_target:sf_trade_planet = {
+				# set_timed_planet_flag = {
+					# flag = sf_tradelock
+					# days = 360
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.120.none
+	# }
+# }
+
+# country_event = {
+	# id = sf_trade.130
+	# title = sf_trade.130.name
+	# desc = sf_trade.130.desc
+	
+	# is_triggered_only = yes
+	# diplomatic = yes
+	# force_open = yes
+	
+	# location = event_target:sf_trade_planet
+	
+	# picture_event_data = {
+		# portrait = event_target:sf_trade_empire
+		# planet_background = event_target:sf_trade_empire
+		# graphical_culture = event_target:sf_trade_empire
+		# city_level = event_target:sf_trade_empire
+		# room = event_target:sf_trade_empire
+	# }
+	
+	# option = {
+		# name = sf_trade.130.corvette
+		# trigger = {
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_mineral_cargo
+					# }
+					# count > 3
+				# }
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 16
+					# create_ship = {
+						# name = random
+						# design = "Ark Defender"
+					# }
+				# }
+				# while = {
+					# count = 4
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_mineral_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.130.destroyer
+		# trigger = {
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_mineral_cargo
+					# }
+					# count > 3
+				# }
+			# }
+			# event_target:sf_trade_empire = {
+				# num_energy > 0
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 8
+					# create_ship = {
+						# name = random
+						# design = "Ark Protector"
+					# }
+				# }
+				# while = {
+					# count = 4
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_mineral_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.130.cruiser
+		# trigger = {
+			# event_target:sf_trade_fleet = {
+				# count_fleet_ships = {
+					# limit = {
+						# is_ship_size = sf_mineral_cargo
+					# }
+					# count > 3
+				# }
+			# }
+			# event_target:sf_trade_empire = {
+				# num_energy > 0
+			# }
+		# }
+		# hidden_effect = {
+			# event_target:sf_trade_fleet = {
+				# while = {
+					# count = 4
+					# create_ship = {
+						# name = random
+						# design = "Ark Guardian"
+					# }
+				# }
+				# while = {
+					# count = 4
+					# random_owned_ship = {
+						# limit = {
+							# is_ship_size = sf_mineral_cargo
+							# has_hp > 0
+						# }
+						# reduce_hp_percent = 100
+					# }
+				# }
+			# }
+		# }
+	# }
+	# option = {
+		# name = sf_trade.130.none
+	# }
+# }
+
+fleet_event = {
+	id = sf_trade.200
+	title = sf_trade.200.name
+	desc = sf_trade.200.desc
+	picture = GFX_evt_fleet_neutral
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			is_colony = yes
+		}
+		FROM.owner = {
+			OR = {
+				is_country_type = default
+				is_country_type = fallen_empire
+				is_country_type = awakened_fallen_empire
+			}
+		}
+		ROOT.owner = {
+			NOT = {
+				is_hostile = FROM.owner
+			}
+			is_country_type = sf_nomad
+		}
+		solar_system = {
+			NOT = {
+				any_ship_in_system = {
+					is_ship_size = sf_trade_post
+				}
+			}
+		}
+		any_owned_ship = {
+			is_in_combat = no
+			is_ship_size = sf_ark_ship
+		}
+	}
+	
+	immediate = {
+		ROOT = {
+			save_event_target_as = sf_trade_fleet
+		}
+		ROOT.owner = {
+			save_event_target_as = sf_trade_nomad
+		}
+		FROM = {
+			save_event_target_as = sf_trade_planet
+		}
+		FROM.owner = {
+			save_event_target_as = sf_trade_empire
+		}
+	}
+	
+	option = {
+		name = sf_trade.200.a
+		trigger = {
+			ROOT.owner = {
+				OR = {
+					minerals > 1000
+					minerals = 1000
+				}
+			}
+		}
+		event_target:sf_trade_nomad = {
+			add_minerals = -1000
+		}
+		hidden_effect = {
+			event_target:sf_trade_nomad = {
+				create_fleet = {
+					effect = {
+						set_owner = event_target:sf_trade_nomad
+						create_ship = {
+							name = random
+							design = "Trading Post"
+						}			
+						set_location = {
+							target = event_target:sf_trade_planet
+							distance = 10
+						}				
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = sf_trade.200.b
+	}	
+}
+
+# event = {
+	# id = sf_trade.300
+	# hide_window = yes
+	# trigger = {
+		# any_country = {
+			# is_country_type = sf_nomad
+			# any_owned_ship = {
+				# is_ship_size = sf_trade_post
+			# }
+		# }
+	# }
+	# immediate = {
+		# every_country = {
+			# limit = {
+				# is_country_type = sf_nomad
+				# any_owned_ship = {
+					# is_ship_size = sf_trade_post
+				# }
+			# }
+			# every_owned_ship = {
+				# limit = {
+					# is_ship_size = sf_trade_post
+					# solar_system = {
+						# space_owner = {
+							# NOT = {
+								# is_country = PREVPREVPREV
+							# }
+						# }
+					# }
+				# }
+				# create_fleet = {
+					# effect = {
+						# set_owner = PREVPREV
+						# while = {
+							# count = 1
+							# create_ship = {
+								# name = random
+								# design = "Resource Freighter"
+							# }
+						# }
+						# set_location = {
+							# target = PREV
+							# distance = 0
+						# }		
+					# }
+				# }
+			# }
+		# }
+	# }
+# }
