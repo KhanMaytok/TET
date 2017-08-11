@@ -1,0 +1,279 @@
+
+sc_o = {
+	class 			= o_star
+	planet			= pc_o_star
+	spawn_odds 		= 4
+	num_planets 	= { min = 4 max = 14 }
+	
+	pc_continental 	= { spawn_odds = 0.4 }
+	pc_desert		= { spawn_odds = 0.4 }
+	pc_tropical		= { spawn_odds = 0.4 }
+	pc_arid 		= { spawn_odds = 0.4 }
+	pc_ocean		= { spawn_odds = 0.4 }
+	pc_tundra		= { spawn_odds = 0.4 }
+	pc_arctic		= { spawn_odds = 0.4 }
+	pc_alpine		= { spawn_odds = 0.4 }
+	pc_savannah		= { spawn_odds = 0.4 }
+}
+sc_rg = {
+	class 			= rg_star
+	planet			= pc_rg_star
+	spawn_odds 		= 7
+	num_planets 	= { min = 2 max = 8 }
+	
+	pc_continental 	= { spawn_odds = 0.4 }
+	pc_desert		= { spawn_odds = 0.4 }
+	pc_tropical		= { spawn_odds = 0.4 }
+	pc_arid 		= { spawn_odds = 0.4 }
+	pc_ocean		= { spawn_odds = 0.4 }
+	pc_tundra		= { spawn_odds = 0.4 }
+	pc_arctic		= { spawn_odds = 0.4 }
+	pc_alpine		= { spawn_odds = 0.4 }
+	pc_savannah		= { spawn_odds = 0.4 }
+}
+
+sc_rsg = {
+	class 			= rsg_star
+	planet			= pc_rsg_star
+	spawn_odds 		= 4
+	num_planets 	= { min = 2 max = 8 }
+	
+	pc_continental 	= { spawn_odds = 0.2 }
+	pc_desert		= { spawn_odds = 0.2 }
+	pc_tropical		= { spawn_odds = 0.2 }
+	pc_arid 		= { spawn_odds = 0.2 }
+	pc_ocean		= { spawn_odds = 0.2 }
+	pc_tundra		= { spawn_odds = 0.2 }
+	pc_arctic		= { spawn_odds = 0.2 }
+	pc_alpine		= { spawn_odds = 0.2 }
+	pc_savannah		= { spawn_odds = 0.2 }
+}
+
+sc_rhg = {
+	class 			= rhg_star
+	planet			= pc_rhg_star
+	spawn_odds 		= 2
+	num_planets 	= { min = 1 max = 6 }
+	
+	pc_continental 	= { spawn_odds = 0.0 }
+	pc_desert		= { spawn_odds = 0.0 }
+	pc_tropical		= { spawn_odds = 0.0 }
+	pc_arid 		= { spawn_odds = 0.0 }
+	pc_ocean		= { spawn_odds = 0.0 }
+	pc_tundra		= { spawn_odds = 0.0 }
+	pc_arctic		= { spawn_odds = 0.0 }
+	pc_alpine		= { spawn_odds = 0.0 }
+	pc_savannah		= { spawn_odds = 0.0 }
+}
+
+
+sc_wd = {
+	class 			= wd_star
+	planet			= pc_wd_star
+	spawn_odds 		= 6
+	num_planets 	= { min = 2 max = 8 }
+	
+	pc_continental 	= { spawn_odds = 0.2 }
+	pc_desert		= { spawn_odds = 0.2 }
+	pc_tropical		= { spawn_odds = 0.2 }
+	pc_arid 		= { spawn_odds = 0.2 }
+	pc_ocean		= { spawn_odds = 0.2 }
+	pc_tundra		= { spawn_odds = 0.2 }
+	pc_arctic		= { spawn_odds = 0.2 }
+	pc_alpine		= { spawn_odds = 0.2 }
+	pc_savannah		= { spawn_odds = 0.2 }
+}
+
+
+sc_l = {
+	class 			= l_star
+	planet			= pc_l_star
+	spawn_odds 		= 5
+	num_planets 	= { min = 4 max = 14 }
+	
+	pc_continental 	= { spawn_odds = 0.2 }
+	pc_desert		= { spawn_odds = 0.2 }
+	pc_tropical		= { spawn_odds = 0.2 }
+	pc_arid 		= { spawn_odds = 0.2 }
+	pc_ocean		= { spawn_odds = 0.2 }
+	pc_tundra		= { spawn_odds = 0.2 }
+	pc_arctic		= { spawn_odds = 0.2 }
+	pc_alpine		= { spawn_odds = 0.2 }
+	pc_savannah		= { spawn_odds = 0.2 }
+}
+
+sc_t = {
+	class 			= t_star
+	planet			= pc_t_star
+	spawn_odds 		= 4
+	num_planets 	= { min = 4 max = 14 }
+	
+	pc_continental 	= { spawn_odds = 0.1 }
+	pc_desert		= { spawn_odds = 0.1 }
+	pc_tropical		= { spawn_odds = 0.1 }
+	pc_arid 		= { spawn_odds = 0.1 }
+	pc_ocean		= { spawn_odds = 0.1 }
+	pc_tundra		= { spawn_odds = 0.1 }
+	pc_arctic		= { spawn_odds = 0.1 }
+	pc_alpine		= { spawn_odds = 0.1 }
+	pc_savannah		= { spawn_odds = 0.1 }
+}
+
+sc_y = {
+	class 			= y_star
+	planet			= pc_y_star
+	spawn_odds 		= 4
+	num_planets 	= { min = 4 max = 14 }
+	
+	pc_continental 	= { spawn_odds = 0.1 }
+	pc_desert		= { spawn_odds = 0.1 }
+	pc_tropical		= { spawn_odds = 0.1 }
+	pc_arid 		= { spawn_odds = 0.1 }
+	pc_ocean		= { spawn_odds = 0.1 }
+	pc_tundra		= { spawn_odds = 0.1 }
+	pc_arctic		= { spawn_odds = 0.1 }
+	pc_alpine		= { spawn_odds = 0.1 }
+	pc_savannah		= { spawn_odds = 0.1 }
+}
+
+sc_wr = {
+	class 			= wr_star
+	planet			= pc_wr_star
+	spawn_odds 		= 2
+	num_planets 	= { min = 4 max = 14 }
+	
+	pc_continental 	= { spawn_odds = 0.1 }
+	pc_desert		= { spawn_odds = 0.1 }
+	pc_tropical		= { spawn_odds = 0.1 }
+	pc_arid 		= { spawn_odds = 0.1 }
+	pc_ocean		= { spawn_odds = 0.1 }
+	pc_tundra		= { spawn_odds = 0.1 }
+	pc_arctic		= { spawn_odds = 0.1 }
+	pc_alpine		= { spawn_odds = 0.1 }
+	pc_savannah		= { spawn_odds = 0.1 }
+}
+
+sc_kg = {
+	class 			= kg_star
+	planet			= pc_kg_star
+	spawn_odds 		= 4
+	num_planets 	= { min = 2 max = 8 }
+	
+	pc_continental 	= { spawn_odds = 0.5 }
+	pc_desert		= { spawn_odds = 0.5 }
+	pc_tropical		= { spawn_odds = 0.5 }
+	pc_arid 		= { spawn_odds = 0.5 }
+	pc_ocean		= { spawn_odds = 0.5 }
+	pc_tundra		= { spawn_odds = 0.5 }
+	pc_arctic		= { spawn_odds = 0.5 }
+	pc_alpine		= { spawn_odds = 0.5 }
+	pc_savannah		= { spawn_odds = 0.5 }
+}
+
+sc_ksg = {
+	class 			= ksg_star
+	planet			= pc_ksg_star
+	spawn_odds 		= 2
+	num_planets 	= { min = 2 max = 8 }
+	
+	pc_continental 	= { spawn_odds = 0.3 }
+	pc_desert		= { spawn_odds = 0.3 }
+	pc_tropical		= { spawn_odds = 0.3 }
+	pc_arid 		= { spawn_odds = 0.3 }
+	pc_ocean		= { spawn_odds = 0.3 }
+	pc_tundra		= { spawn_odds = 0.3 }
+	pc_arctic		= { spawn_odds = 0.3 }
+	pc_alpine		= { spawn_odds = 0.3 }
+	pc_savannah		= { spawn_odds = 0.3 }
+}
+
+sc_khg = {
+	class 			= khg_star
+	planet			= pc_khg_star
+	spawn_odds 		= 1
+	num_planets 	= { min = 1 max = 6 }
+	
+	pc_continental 	= { spawn_odds = 0.1 }
+	pc_desert		= { spawn_odds = 0.1 }
+	pc_tropical		= { spawn_odds = 0.1 }
+	pc_arid 		= { spawn_odds = 0.1 }
+	pc_ocean		= { spawn_odds = 0.1 }
+	pc_tundra		= { spawn_odds = 0.1 }
+	pc_arctic		= { spawn_odds = 0.1 }
+	pc_alpine		= { spawn_odds = 0.1 }
+	pc_savannah		= { spawn_odds = 0.1 }
+}
+
+
+sc_pr = {
+	class 			= pr_star
+	planet			= pc_pr_star
+	spawn_odds 		= 0
+}
+
+sc_grn = {
+	class 			= grn_star
+	planet			= pc_grn_star
+	spawn_odds 		= 0
+}
+sc_rouge = {
+	class = rouge_star #leaving star because it makes lining everything up easier :P
+	planet = pc_l_star #stars should never be used with this class, this is just the default 
+	spawn_odds = 0     #will not generate naturally, spawned through event around the galaxy
+}
+
+random_list = {
+	name = "rl_more_stars"
+	stars = {
+		"sc_o"
+		"sc_rg"
+		"sc_rsg"
+		"sc_rhg"
+		"sc_wd"
+		"sc_l"
+		"sc_t"
+		"sc_y"
+		"sc_wr"
+		"sc_kg"
+		"sc_ksg"
+		"sc_khg"
+	}
+}
+random_list = {
+	name = "rl_morebin_stars" #excludes hypergiants for close binary systems
+	stars = {
+		"sc_o"
+		"sc_rg"
+		"sc_rsg"
+		"sc_wd"
+		"sc_l"
+		"sc_t"
+		"sc_y"
+		"sc_wr"
+		"sc_ksg"
+		"sc_kg"
+	}
+}
+random_list = {
+	name = "rl_morestandard_stars" # for everyone else :D
+	stars = {
+		"sc_a"
+		"sc_b"
+		"sc_o"
+		"sc_f"
+		"sc_g"
+		"sc_k"
+		"sc_m"
+		"sc_rg"
+		"sc_rsg"
+		"sc_rhg"
+		"sc_wd"
+		"sc_l"
+		"sc_t"
+		"sc_y"
+		"sc_wr"
+		"sc_kg"
+		"sc_ksg"
+		"sc_khg"
+	}
+}
