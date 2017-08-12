@@ -46,9 +46,9 @@
     sf_start.100.desc:0 "There have been various proposals to build the ultimate weapon. However we only have enough resources to complete one. Which direction should the project take?"
     sf_start.100.a:0 "The Ultimate Machine."
     sf_start.100.b:0 "The Ultimate Lifeform."
-    sf_start.100.c:0 "The Ultimate Spacecraft."
+    sf_start.100.c:0 "Comienza el viaje."
     sf_start.100.d:0 "The Ultimate Power Source."
-    sf_start.100.none:0 "This is a waste of time."
+    sf_start.100.none:0 "Esta es una pérdida de tiempo."
     
     sf_start.200.name:0 "Ultimate Weapon Project: $sf_broodmother$ Plans"
     sf_start.200.desc:0 "The best of our biologists have worked together to make a plan for the ultimate biological weapon. But it comes at great risk of being uncontrollable. Shall we go ahead and create it?"
@@ -59,12 +59,12 @@
     sf_start.201.a:0 "What have we done?!?"
     
     sf_start.300.name:0 "Ultimate Weapon Project: $sf_ark_ship$ Plans"
-    sf_start.300.desc:0 "The best of our engineers have worked together to make a plan for the ultimate spacecraft capable of housing our entire population. But it costs a great deal of resources, enough to make our homeworld unliveable. Shall we go ahead and build it?"
-    sf_start.300.a:0 "We shall be unchained!"
+    sf_start.300.desc:0 "El TET ha acabado con nuestro planeta. Los mares han sido convertidos en combustible para impulsar la inmensa maquinaria de guerra alienígena. Nuestra raza ha sido esclavizada debido a sus inmensas capacidades y ahora solos los peones que usarán para arrasar la galaxia. "
+    sf_start.300.a:0 "Hemos caído!"
     sf_start.300.b:0 "I rather live here."
-    sf_start.301.name:0 "Ultimate Weapon Project: $sf_ark_ship$ Finished"
+    sf_start.301.name:0 "Ultimate Weapon Project: $sf_ark_ship$ terminada"
     sf_start.301.desc:0 "We have completed the ultimate spacecraft! It can sustain our species inside it. Furthermore it can harvest resources to build more ships.\n\nTo build trade posts, orbit a non-hostile planet with an $sf_ark_ship$.\n\nTo build ships, orbit a star with an $sf_ark_ship$\n\nTo mine resources, build a research or mining station on a habitable planet."
-    sf_start.301.a:0 "Free from planetary existence at last!"
+    sf_start.301.a:0 "Ahora somos libres de la exixtencia planetaria"
     
     sf_start.400.name:0 "Ultimate Weapon Project: Novarite Plans"
     sf_start.400.desc:0 "The best of our physicists have worked together to make a plan for the ultimate power source. It harnesses the power of the stars themselves. Shall we go ahead and build it?"

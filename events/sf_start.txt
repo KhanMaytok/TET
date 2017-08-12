@@ -1,5 +1,9 @@
 namespace = sf_start
 
+# Current path sf_start.1 - sf_start.100 - sf_start.300 - sf_start.301
+
+
+# Begin the nomad journey
 event = {
 	id = sf_start.1
 	hide_window = yes
@@ -79,7 +83,6 @@ country_event = {
 }
 
 ###Choice Events
-
 country_event = {
 	id = sf_start.100
 	title = sf_start.100.name
@@ -88,42 +91,12 @@ country_event = {
 	
 	is_triggered_only = yes
 	
-	#Mothership Option
-	option = {
-		name = sf_start.100.a
-		hidden_effect = {
-			country_event = {
-				id = sf_start.2
-			}
-		}
-	}	
-	
-	#Swarm Option
-	option = {
-		name = sf_start.100.b
-		hidden_effect = {
-			country_event = {
-				id = sf_start.200
-			}
-		}
-	}	
-	
 	#Nomad Option
 	option = {
 		name = sf_start.100.c
 		hidden_effect = {
 			country_event = {
 				id = sf_start.300
-			}
-		}
-	}
-	
-	#Energy Option
-	option = {
-		name = sf_start.100.d
-		hidden_effect = {
-			country_event = {
-				id = sf_start.400
 			}
 		}
 	}
@@ -199,6 +172,7 @@ country_event = {
 	}
 }
 
+
 country_event = {
 	id = sf_start.300
 	title = sf_start.300.name
@@ -221,6 +195,7 @@ country_event = {
 	
 }
 
+# Abandon the planet
 country_event = {
 	id = sf_start.301
 	title = sf_start.301.name
@@ -266,23 +241,7 @@ country_event = {
 						distance = 0
 					}				
 				}
-			}
-			#create_fleet = {
-			#	effect = {
-			#		set_owner = ROOT
-			#		while = {
-			#			count = 2
-			#			create_ship = {
-			#				name = random
-			#				design = "Resource Freighter"
-			#			}
-			#		}
-			#		set_location = {
-			#			target = PREV
-			#			distance = 0
-			#		}		
-			#	}
-			#}	
+			}			
 		}
 	}
 	option = {
