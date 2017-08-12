@@ -1,0 +1,7 @@
+pm_dest_traveler_terraformed = {
+	spawn_chance = {
+		#only from traveler terraforming
+	}
+	
+	modifier = "dest_traveler_terraformed"
+}

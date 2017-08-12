@@ -1,0 +1,12 @@
+# dest_trav_gov = {
+	# possible = {
+		#has_civic = civic_dest_traveler
+		# is_country_type = dest_traveler
+	# }
+	
+	# ruler_title = DEST_LEADER_TITLE
+	
+	# weight = {
+		# base = 100000
+	# }
+# }

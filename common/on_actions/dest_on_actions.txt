@@ -1,0 +1,39 @@
+# on_monthly_pulse = {
+	# events = {
+		# traveler.203
+	# }
+# }
+
+on_fleet_enter_orbit = {
+	events = {
+		traveler.1004
+		traveler.1008
+		traveler.1009
+	}
+}
+
+on_entering_system_fleet = {
+	events = {
+		traveler.1002
+		traveler.1006
+	}
+}
+
+on_entering_system = {
+	events = {
+		traveler.9
+	}
+}
+
+# on_custom_diplomacy = {
+	# events = {
+		# traveler.100
+	# }
+# }
+
+on_game_start = {
+	events = {
+		traveler.1
+		# darkness.1
+	}
+}
