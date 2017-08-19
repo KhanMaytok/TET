@@ -68,6 +68,10 @@ generate_resources = {
 
 change_pc_ideal = {
 	IF = {
+		limit = { solar_system = { space_owner = { ideal_planet_class = pc_gaia } } }
+		change_pc = pc_gaia
+	}
+	IF = {
 		limit = { solar_system = { space_owner = { ideal_planet_class = pc_arid } } }
 		change_pc = pc_arid
 	}
@@ -106,11 +110,7 @@ change_pc_ideal = {
 	IF = {
 		limit = { solar_system = { space_owner = { ideal_planet_class = pc_nuked } } }
 		change_pc = pc_nuked
-	}
-	IF = {
-		limit = { solar_system = { space_owner = { ideal_planet_class = pc_gaia } } }
-		change_pc = pc_gaia
-	}
+	}	
 }
 
 uplift_primitives = {

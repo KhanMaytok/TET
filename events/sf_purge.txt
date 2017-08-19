@@ -184,6 +184,5 @@ fleet_event = {
 	}
 	option = {
 		name = sf_purge.3.b
-	}
-	
+	}	
 }
